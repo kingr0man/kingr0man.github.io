@@ -260,3 +260,42 @@
   });
 
 })()
+
+
+
+//down arrow
+$(function() {
+  $('a[href*=#]').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+  });
+});
+
+
+
+
+
+
+
+
+
+
+//url changer
+
+window.addEventListener("scroll", function() {
+  // Get the current scroll position
+  const scrollPosition = window.pageYOffset;
+	
+  if (scrollPosition >= document.getElementById("about").offsetTop) {
+    // Update the URL with the "#about" hash
+    window.location.hash = "about";
+  } else if (scrollPosition >= document.getElementById("portfolio").offsetTop) {
+    // Update the URL with the "#portfolio" hash
+    window.location.hash = "portfolio";
+  }  else if (scrollPosition >= document.getElementById("contact").offsetTop) {
+    // Update the URL with the "#portfolio" hash
+    window.location.hash = "portfolio"; 
+  }// Repeat for other sections
+});
+
+
